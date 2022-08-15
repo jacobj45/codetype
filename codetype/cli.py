@@ -16,7 +16,7 @@ def cli():  # noqa: D400
 @click.argument(
     "path",
     type=str,
-    help="File path or URL of source file",
+#     help="File path or URL of source file",
 )
 @click.option(
     "-l",
@@ -72,7 +72,11 @@ def file(
     target_wpm,
     keep_comments,
 ):  # noqa: D400
-    """Type text from a source file"""  # noqa: D400
+    """
+    Type text from a source file
+    
+    PATH: File path or URL of source file
+    """
 
     if validators.url.url(path):
         filename, content = read_from_url(path)
