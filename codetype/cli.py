@@ -16,7 +16,7 @@ def cli():  # noqa: D400
 @click.argument(
     "path",
     type=str,
-#     help="File path or URL of source file",
+    # help="File path or URL of source file",
 )
 @click.option(
     "-l",
@@ -74,8 +74,8 @@ def file(
 ):  # noqa: D400
     """Type text from a source file"""
 
-    if validators.url.url(path):
-        filename, content = read_from_url(path)
+    if validators.url(path):
+        content, filename = read_from_url(path)
     elif (filepath := Path(path)).exists():
         filename = filepath.name
         content = filepath.read_text()

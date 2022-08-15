@@ -29,6 +29,7 @@ def read_from_url(url):
             # )
             resp.raise_for_status()
         content = resp.text
+        cache_file.write_text(content)
     return content, parsed_url.path
 
 
