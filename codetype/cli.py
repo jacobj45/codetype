@@ -72,11 +72,7 @@ def file(
     target_wpm,
     keep_comments,
 ):  # noqa: D400
-    """
-    Type text from a source file
-    
-    PATH: File path or URL of source file
-    """
+    """Type text from a source file"""
 
     if validators.url.url(path):
         filename, content = read_from_url(path)
